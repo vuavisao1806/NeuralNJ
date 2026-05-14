@@ -14,6 +14,8 @@ First, install the compilation tools:
 ```bash
 sudo apt install build-essential cmake
 sudo apt-get install autoconf automake libtool
+sudo apt-get install libgmp3-dev libhts-dev libhtscodecs-dev
+sudo apt install bison flex
 pip install pybind11
 ```
 

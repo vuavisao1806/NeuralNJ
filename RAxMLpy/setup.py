@@ -34,7 +34,10 @@ class CustomBuildExt(build_ext):
             if os.path.exists('./raxml-ng'):
                 shutil.rmtree('./raxml-ng')
 
-            subprocess.check_call(['git', 'clone', '--recursive', 'https://github.com/amkozlov/raxml-ng.git'])
+            subprocess.check_call(['git', 'clone', '--recursive',
+                                    '--branch', '1.2.2',
+                                    '--depth', '1',
+                                   'https://github.com/amkozlov/raxml-ng.git'])
 
             os.chdir("raxml-ng")
 
