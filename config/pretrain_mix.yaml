@@ -1,0 +1,37 @@
+num_epoch: 150
+num_episodes: 10
+num_episodes_baseline: 50
+lr: 0.0003
+clip_value: -1.0
+
+ratio_factor: 0.5
+loss:
+  BALANCED_ELU_LOSS: True
+  ELU_LOSS: False
+
+
+
+dataset_path: "data_gen/data/train"
+val_dataset_path: "data_gen/data/validation"
+# dataset_taxa_list: [20, 30, 50, 100]
+# dataset_taxa_list: [90, 100]
+dataset_taxa_list: [50]
+
+summary_name: "taxa50_lenmixed2320_gtr+i+g_randomlambda_Highway_FuseAttnXRest_real_NoNorm_hgWoMeanWoMLP_EncAttnl6_h8_sharedAGG_BalancedELU_dim64_lr0.0005_woclip_decay0.98_margin0.5_patch1_bs1_RawTopo_BtmTopTraj_MSATransEnc_dropout0.4"
+
+summary_path: "tb_opt_model_taxa50_len_mixed"
+
+env:
+  # batch_size: 4
+  batch_size: 1
+  # batch_size: 128
+  # BATCH_SIZE: 8
+  sequence_type: DNA_WITH_GAP
+
+model:
+  vocab_size: 4
+  patch_size: 1
+  # fixed_length: 1024
+  embed_dim: 64
+  num_enc_heads: 8
+  num_enc_layers: 6
