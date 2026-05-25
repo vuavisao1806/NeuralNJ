@@ -27,6 +27,8 @@ import raxmlpy
 
 from phydata import PhySampler, custom_collate_fn, load_pi_instance, load_tree_file, load_phy_file_multirow, load_phy_file
 
+import csv
+
 evolution_model = 'GTR+I+G'
 # evolution_model = 'JC'
 
@@ -474,6 +476,24 @@ def Agmax_one_instance(cfgs, MSA_file, policy_network, env, c_best_tree_file=Non
 
     return dict(best_tree_str=best_tree_str, score=score, raw_tree_score=raw_tree_score, c_best_tree_score=c_best_tree_score, rf_distance=rf_distance, rf_distance_raw=rf_distance_raw, rf_distance_c_raw=rf_distance_c_raw)
 
+def init_inference_time_csv(csv_file):
+	with open(csv_file, "w", newline="") as f:
+		writer = csv.writer(f)
+		writer.writerow([
+			"instance",
+			"tree_file",
+			"inference_time_seconds"
+		])
+
+
+def append_inference_time_csv(csv_file, instance_name, tree_file_name, elapsed_time):
+	with open(csv_file, "a", newline="") as f:
+		writer = csv.writer(f)
+		writer.writerow([
+			instance_name,
+			tree_file_name,
+			f"{elapsed_time:.6f}"
+		])
 
 def Argmax_inference(test_file_path, write_dir, write_file_name, branch_optimize=False):
     env = PhyInferEnv(cfgs, device)
@@ -493,20 +513,34 @@ def Argmax_inference(test_file_path, write_dir, write_file_name, branch_optimize
     policy_network = PGPI_pretrained
 
     files = os.listdir(test_file_path)
-    files = [file for file in files if file.endswith(".phy")]
+    files = [file for file in files if file.endswith((".phy", ".fasta", ".aln"))]
 
     if not os.path.exists(write_dir):
         os.makedirs(write_dir)
+
+    time_csv_file = os.path.join(write_dir, "inference_time.csv")
+    init_inference_time_csv(time_csv_file)
 
     import tqdm
     for file in tqdm.tqdm(files, desc="Processing MSA files"):
         MSA_file = os.path.join(test_file_path, file)
         if os.path.exists(MSA_file):
             # 传入已加载好的模型和环境
+            start_time = time.time()
             result_dict = Agmax_one_instance(cfgs, MSA_file, policy_network, env, branch_optimize=branch_optimize)
             # 保存最优树
+            elapsed_time = time.time() - start_time
+
             with open(os.path.join(write_dir, file[:-4] + ".tre"), "w") as f:
                 f.write(result_dict["best_tree_str"])
+
+            tree_file_name = os.path.splitext(file)[0] + ".tre"
+            append_inference_time_csv(
+                time_csv_file,
+                file,
+                tree_file_name,
+                elapsed_time
+            )
 
 
 def Search_inference(test_file_path, write_dir,write_file_name):
@@ -527,17 +561,33 @@ def Search_inference(test_file_path, write_dir,write_file_name):
     policy_network = PGPI_pretrained
 
     files = os.listdir(test_file_path)
-    files = [file for file in files if file.endswith(".phy")]
+    files = [file for file in files if file.endswith((".phy", ".fasta", ".aln"))]
     if not os.path.exists(write_dir):
         os.makedirs(write_dir)
+
+    time_csv_file = os.path.join(write_dir, "inference_time.csv")
+    init_inference_time_csv(time_csv_file)
 
     for file in files:
         MSA_file = os.path.join(test_file_path, file)
         if all(os.path.exists(f) for f in [MSA_file]):
             # Call the placeholder RL_Search function
+            start_time = time.time()
             result_dict = RL_Search(cfgs, MSA_file, policy_network, env)
+            
+            elapsed_time = time.time() - start_time
+
             with open(os.path.join(write_dir, file[:-4] + ".tre"), "w") as f:
                 f.write(result_dict["the_best_tree"])
+
+            
+            tree_file_name = os.path.splitext(file)[0] + ".tre"
+            append_inference_time_csv(
+                time_csv_file,
+                file,
+                tree_file_name,
+                elapsed_time
+            )
         print(f"finish NerualNJ-MC for {file}")
 
 
@@ -563,18 +613,35 @@ def finetune_inference(test_file_path, write_dir, write_file_name):
     policy_network = PGPI_pretrained
 
     files = os.listdir(test_file_path)
-    files = [file for file in files if file.endswith(".phy")]
+    files = [file for file in files if file.endswith((".phy", ".fasta", ".aln"))]
 
     if not os.path.exists(write_dir):
         os.makedirs(write_dir)
+
+    time_csv_file = os.path.join(write_dir, "inference_time.csv")
+    init_inference_time_csv(time_csv_file)
+    
     for file in files:
         MSA_file = os.path.join(test_file_path, file)
         if all(os.path.exists(f) for f in [MSA_file]):
             # Call the placeholder RL_Search function
-            result_dict = RL_finetuning(cfgs, MSA_file, policy_network, optimizer, env)
+            start_time = time.time()
             
+            result_dict = RL_finetuning(cfgs, MSA_file, policy_network, optimizer, env)
+
+            elapsed_time = time.time() - start_time
+
+
             with open(os.path.join(write_dir, file[:-4] + ".tre"), "w") as f:
                 f.write(result_dict["the_best_tree"])
+
+            tree_file_name = os.path.splitext(file)[0] + ".tre"
+            append_inference_time_csv(
+                time_csv_file,
+                file,
+                tree_file_name,
+                elapsed_time
+            )
         print(f"finish NerualNJ-RL for {file}")
 
 
@@ -588,13 +655,20 @@ if __name__ == "__main__":
     parser.add_argument('--stop_step', type=int, default=100, help='Stop step')
     parser.add_argument('--evolution_model', type=str, default="GTR+I+G", help='Evolution model')
     parser.add_argument('--branch_optimize', action='store_true', help='Enable branch optimization using raxmlpy if specified')
+    
+    parser.add_argument('--instance_path', type=str, default=None, help='Override instance path from config file')
     args = parser.parse_args()
 
     cfgs = utils.empty_config()
     cfgs.merge_from_file(args.config_path)
 
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    cfgs.instance_path = f"{current_dir}/{cfgs.instance_path}"
+    if args.instance_path is not None:
+        cfgs.instance_path = args.instance_path
+
+    if not os.path.isabs(cfgs.instance_path):
+        cfgs.instance_path = os.path.join(current_dir, cfgs.instance_path)
+
     cfgs.reload_checkpoint_path = f"{current_dir}/{cfgs.reload_checkpoint_path}"
     test_file_dir = cfgs.instance_path
 

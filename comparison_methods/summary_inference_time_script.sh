@@ -1,0 +1,1 @@
+Rscript summary_inference_time.R ../output summary_inference_time.csv

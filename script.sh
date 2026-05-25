@@ -1,5 +1,5 @@
-conda env create -f environment.yaml
-conda activate NeuralNJ
+# conda env create -f environment.yaml
+# conda activate NeuralNJ
 cd RAxMLpy
 sudo apt install build-essential cmake
 sudo apt-get install autoconf automake libtool
