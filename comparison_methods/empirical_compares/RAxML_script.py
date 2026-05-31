@@ -7,7 +7,7 @@ import csv
 raxml_exec = "/workspace/standard-RAxML/raxmlHPC"
 cal_rf_script = "/workspace/NeuralNJ/examples/cal_rf_distance.py"
 
-def parse_rf_output(output: str) -> tuple[float, float] | None:
+def parse_rf_output(output: str) -> tuple[float, float]:
 	"""
 	Parse output từ cal_rf_distance.py.
 
@@ -30,7 +30,8 @@ def solve_dataset(dataset: str) -> None:
 	input_dir = f"/workspace/NeuralNJ/empirical/{dataset}"
 	output_dir = f"/workspace/RAxML_{dataset}_Results"
 	abs_output_dir = os.path.abspath(output_dir)
-	ref_tree_path = f"/workspace/concatenation_species_trees/{dataset}/{dataset}.IQ-TREE.concatenation.tre"
+	special_dataset = dataset[0:-1] if dataset == "JarvD5a" else dataset
+	ref_tree_path = f"/workspace/concatenation_species_trees/{special_dataset}/{dataset}.IQ-TREE.concatenation.tre"
 
 	if not os.path.exists(abs_output_dir):
 		os.makedirs(abs_output_dir)
@@ -48,6 +49,11 @@ def solve_dataset(dataset: str) -> None:
 		file_name = os.path.basename(msa_path)
 		base_name = os.path.splitext(file_name)[0]
 		
+		best_tree = os.path.join(abs_output_dir, f"RAxML_bestTree.{base_name}")
+		if os.path.exists(best_tree):
+			print(f"[{i}/{len(gene_files)}] Skipping (already done): {file_name}")
+			continue
+
 		print(f"[{i}/{len(gene_files)}] Running: {file_name}...")
 		
 		command = [
@@ -62,8 +68,8 @@ def solve_dataset(dataset: str) -> None:
 		
 		try:
 			# Chạy RAxML (ẩn output dài dòng của RAxML trên terminal)
-			print("Just comment")
-			# subprocess.run(command, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT, check=True)
+			#print("Just comment")
+			subprocess.run(command, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT, check=True)
 		except subprocess.CalledProcessError as e:
 			print(f"Error when running RAxML for {file_name}")
 

@@ -1,0 +1,169 @@
+
+RAxML-NG v. 1.2.0 released on 09.05.2023 by The Exelixis Lab.
+Developed by: Alexey M. Kozlov and Alexandros Stamatakis.
+Contributors: Diego Darriba, Tomas Flouri, Benoit Morel, Sarah Lutteropp, Ben Bettisworth, Julia Haag, Anastasis Togkousidis.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+System: AMD EPYC 9J14 96-Core Processor, 192 cores, 1133 GB RAM
+
+RAxML-NG was called at 27-May-2026 04:32:03 as follows:
+
+./raxml-ng --msa /workspace/NeuralNJ/data_gen/data/test/len1024/taxa100/G_l_1024_n_100_0_0.02_101.phy --model GTR+G --threads 8 --prefix raxml_output_test128_GTR+G/len1024_taxa100/G_l_1024_n_100_0_0.02_101.phy --redo --seed 2201 --opt-model off
+
+Analysis options:
+  run mode: ML tree search
+  start tree(s): random (10) + parsimony (10)
+  random seed: 2201
+  tip-inner: OFF
+  pattern compression: ON
+  per-rate scalers: OFF
+  site repeats: ON
+  logLH epsilon: general: 10.000000, brlen-triplet: 1000.000000
+  fast spr radius: AUTO
+  spr subtree cutoff: 1.000000
+  fast CLV updates: ON
+  branch lengths: proportional (ML estimate, algorithm: NR-FAST)
+  SIMD kernels: AVX2
+  parallelization: coarse-grained (auto), PTHREADS (8 threads), thread pinning: OFF
+
+WARNING: Running in REDO mode: existing checkpoints are ignored, and all result files will be overwritten!
+
+[00:00:00] Reading alignment from file: /workspace/NeuralNJ/data_gen/data/test/len1024/taxa100/G_l_1024_n_100_0_0.02_101.phy
+[00:00:00] Loaded alignment with 100 taxa and 1024 sites
+
+WARNING: Fully undetermined columns found: 5
+
+NOTE: Reduced alignment (with duplicates and gap-only sites/taxa removed) 
+NOTE: was saved to: /workspace/NeuralNJ/comparison_methods/raxml_output_test128_GTR+G/len1024_taxa100/G_l_1024_n_100_0_0.02_101.phy.raxml.reduced.phy
+
+Alignment comprises 1 partitions and 989 patterns
+
+Partition 0: noname
+Model: GTR+FO+G4m
+Alignment sites / patterns: 1019 / 989
+Gaps: 23.25 %
+Invariant sites: 5.59 %
+
+
+NOTE: Binary MSA file created: raxml_output_test128_GTR+G/len1024_taxa100/G_l_1024_n_100_0_0.02_101.phy.raxml.rba
+
+Parallelization scheme autoconfig: 8 worker(s) x 1 thread(s)
+
+[00:00:00] Generating 10 random starting tree(s) with 100 taxa
+[00:00:00] Generating 10 parsimony starting tree(s) with 100 taxa
+Parallel parsimony with 8 threads
+Parallel reduction/worker buffer size: 1 KB  / 0 KB
+
+[00:00:00] Data distribution: max. partitions/sites/weight per thread: 1 / 989 / 15824
+[00:00:00] Data distribution: max. searches per worker: 3
+
+Starting ML tree search with 20 distinct starting trees
+
+[00:00:00 -103852.035560] Initial branch length optimization
+[00:00:00 -93516.311733] Model parameter optimization (eps = 10.000000)
+[00:00:00 -93512.256486] AUTODETECT spr round 1 (radius: 5)
+[00:00:00 -83915.166927] AUTODETECT spr round 2 (radius: 10)
+[00:00:01 -75982.953053] AUTODETECT spr round 3 (radius: 15)
+[00:00:02 -75238.737997] AUTODETECT spr round 4 (radius: 20)
+[00:00:02 -75237.724287] AUTODETECT spr round 5 (radius: 25)
+[00:00:03 -75237.121902] SPR radius for FAST iterations: 25 (autodetect)
+[00:00:03 -75237.121902] Model parameter optimization (eps = 3.000000)
+[00:00:03 -75236.719562] FAST spr round 1 (radius: 25)
+[00:00:03 -73437.770357] FAST spr round 2 (radius: 25)
+[00:00:04 -73342.282116] FAST spr round 3 (radius: 25)
+[00:00:04 -73313.690249] FAST spr round 4 (radius: 25)
+[00:00:05 -73311.159435] Model parameter optimization (eps = 1.000000)
+[00:00:05 -73311.151623] SLOW spr round 1 (radius: 5)
+[00:00:06 -73308.980283] SLOW spr round 2 (radius: 10)
+[00:00:07 -73308.956403] SLOW spr round 3 (radius: 15)
+[00:00:09 -73308.955759] SLOW spr round 4 (radius: 20)
+[00:00:10 -73308.955658] SLOW spr round 5 (radius: 25)
+[00:00:10 -73308.955636] Model parameter optimization (eps = 0.100000)
+
+[00:00:10] [worker #0] ML tree search #1, logLikelihood: -73308.955633
+
+[00:00:10 -103647.863566] Initial branch length optimization
+[00:00:10] [worker #2] ML tree search #3, logLikelihood: -73309.639885
+[00:00:10 -93394.198683] Model parameter optimization (eps = 10.000000)
+[00:00:10 -93386.990077] AUTODETECT spr round 1 (radius: 5)
+[00:00:11 -80090.118181] AUTODETECT spr round 2 (radius: 10)
+[00:00:11] [worker #5] ML tree search #6, logLikelihood: -73308.956888
+[00:00:11] [worker #1] ML tree search #2, logLikelihood: -73310.004705
+[00:00:11] [worker #3] ML tree search #4, logLikelihood: -73309.512740
+[00:00:11] [worker #4] ML tree search #5, logLikelihood: -73309.900962
+[00:00:11] [worker #6] ML tree search #7, logLikelihood: -73308.949750
+[00:00:11] [worker #7] ML tree search #8, logLikelihood: -73310.002075
+[00:00:11 -75192.875602] AUTODETECT spr round 3 (radius: 15)
+[00:00:12 -75074.761455] AUTODETECT spr round 4 (radius: 20)
+[00:00:13 -75073.148801] AUTODETECT spr round 5 (radius: 25)
+[00:00:13 -75071.985855] SPR radius for FAST iterations: 25 (autodetect)
+[00:00:13 -75071.985855] Model parameter optimization (eps = 3.000000)
+[00:00:13 -75071.109910] FAST spr round 1 (radius: 25)
+[00:00:13 -73449.502114] FAST spr round 2 (radius: 25)
+[00:00:14 -73311.456234] FAST spr round 3 (radius: 25)
+[00:00:14 -73310.390069] Model parameter optimization (eps = 1.000000)
+[00:00:14 -73310.383655] SLOW spr round 1 (radius: 5)
+[00:00:15 -73309.272833] SLOW spr round 2 (radius: 10)
+[00:00:17 -73309.245655] SLOW spr round 3 (radius: 15)
+[00:00:19 -73309.244637] SLOW spr round 4 (radius: 20)
+[00:00:20 -73309.244549] SLOW spr round 5 (radius: 25)
+[00:00:20 -73309.244533] Model parameter optimization (eps = 0.100000)
+
+[00:00:20] [worker #0] ML tree search #9, logLikelihood: -73309.244530
+
+[00:00:20 -77846.486624] Initial branch length optimization
+[00:00:20 -74073.455225] Model parameter optimization (eps = 10.000000)
+[00:00:20 -74070.377364] AUTODETECT spr round 1 (radius: 5)
+[00:00:20] [worker #2] ML tree search #11, logLikelihood: -73309.471726
+[00:00:20] [worker #3] ML tree search #12, logLikelihood: -73310.378150
+[00:00:20 -73497.420293] AUTODETECT spr round 2 (radius: 10)
+[00:00:20] [worker #5] ML tree search #14, logLikelihood: -73309.083063
+[00:00:21] [worker #6] ML tree search #15, logLikelihood: -73310.422608
+[00:00:21] [worker #4] ML tree search #13, logLikelihood: -73309.980527
+[00:00:21] [worker #7] ML tree search #16, logLikelihood: -73309.175918
+[00:00:21 -73496.643382] AUTODETECT spr round 3 (radius: 15)
+[00:00:21] [worker #1] ML tree search #10, logLikelihood: -73309.084524
+[00:00:22 -73496.394676] AUTODETECT spr round 4 (radius: 20)
+[00:00:22 -73496.264252] AUTODETECT spr round 5 (radius: 25)
+[00:00:22 -73496.182278] SPR radius for FAST iterations: 20 (autodetect)
+[00:00:22 -73496.182278] Model parameter optimization (eps = 3.000000)
+[00:00:22 -73496.136582] FAST spr round 1 (radius: 20)
+[00:00:23 -73315.223416] FAST spr round 2 (radius: 20)
+[00:00:23 -73313.388893] Model parameter optimization (eps = 1.000000)
+[00:00:23 -73313.383436] SLOW spr round 1 (radius: 5)
+[00:00:25 -73310.276986] SLOW spr round 2 (radius: 10)
+[00:00:26 -73310.270616] SLOW spr round 3 (radius: 15)
+[00:00:28 -73310.270503] SLOW spr round 4 (radius: 20)
+[00:00:29 -73310.270499] SLOW spr round 5 (radius: 25)
+[00:00:29 -73310.270499] Model parameter optimization (eps = 0.100000)
+
+[00:00:29] [worker #0] ML tree search #17, logLikelihood: -73310.270499
+
+[00:00:29] [worker #3] ML tree search #20, logLikelihood: -73309.419840
+[00:00:29] [worker #2] ML tree search #19, logLikelihood: -73310.000185
+[00:00:31] [worker #1] ML tree search #18, logLikelihood: -73309.828710
+
+Optimized model parameters:
+
+   Partition 0: noname
+   Rate heterogeneity: GAMMA (4 cats, mean),  alpha: 1.000000 (ML),  weights&rates: (0.250000,0.136954) (0.250000,0.476752) (0.250000,1.000000) (0.250000,2.386294) 
+   Base frequencies (ML): 0.250000 0.250000 0.250000 0.250000 
+   Substitution rates (ML): 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 
+
+
+Final LogLikelihood: -73308.949750
+
+AIC score: 147029.899501 / AICc score: 147134.929058 / BIC score: 148044.774370
+Free parameters (model + branch lengths): 206
+
+Best ML tree saved to: /workspace/NeuralNJ/comparison_methods/raxml_output_test128_GTR+G/len1024_taxa100/G_l_1024_n_100_0_0.02_101.phy.raxml.bestTree
+All ML trees saved to: /workspace/NeuralNJ/comparison_methods/raxml_output_test128_GTR+G/len1024_taxa100/G_l_1024_n_100_0_0.02_101.phy.raxml.mlTrees
+Optimized model saved to: /workspace/NeuralNJ/comparison_methods/raxml_output_test128_GTR+G/len1024_taxa100/G_l_1024_n_100_0_0.02_101.phy.raxml.bestModel
+
+Execution log saved to: /workspace/NeuralNJ/comparison_methods/raxml_output_test128_GTR+G/len1024_taxa100/G_l_1024_n_100_0_0.02_101.phy.raxml.log
+
+Analysis started: 27-May-2026 04:32:03 / finished: 27-May-2026 04:32:34
+
+Elapsed time: 31.526 seconds
+

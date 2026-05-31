@@ -17,10 +17,10 @@ def command_raxml(msa_path, output_dir):
 		excuting_dir,
 		"--msa", f"{msa_path}",
 		"--model", evo_model,
-		"--threads", "6",
+		"--threads", "8",
 		"--prefix", f"{output_path}",
 		"--redo",
-		"--seed", "7788",
+		"--seed", "2201",
 		"--opt-model", "off"
 	]
 

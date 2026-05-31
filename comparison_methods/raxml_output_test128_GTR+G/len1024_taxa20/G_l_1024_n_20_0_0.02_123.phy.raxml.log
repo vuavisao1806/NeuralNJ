@@ -1,0 +1,157 @@
+
+RAxML-NG v. 1.2.0 released on 09.05.2023 by The Exelixis Lab.
+Developed by: Alexey M. Kozlov and Alexandros Stamatakis.
+Contributors: Diego Darriba, Tomas Flouri, Benoit Morel, Sarah Lutteropp, Ben Bettisworth, Julia Haag, Anastasis Togkousidis.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+System: AMD EPYC 9J14 96-Core Processor, 192 cores, 1133 GB RAM
+
+RAxML-NG was called at 27-May-2026 06:07:16 as follows:
+
+./raxml-ng --msa /workspace/NeuralNJ/data_gen/data/test/len1024/taxa20/G_l_1024_n_20_0_0.02_123.phy --model GTR+G --threads 8 --prefix raxml_output_test128_GTR+G/len1024_taxa20/G_l_1024_n_20_0_0.02_123.phy --redo --seed 2201 --opt-model off
+
+Analysis options:
+  run mode: ML tree search
+  start tree(s): random (10) + parsimony (10)
+  random seed: 2201
+  tip-inner: OFF
+  pattern compression: ON
+  per-rate scalers: OFF
+  site repeats: ON
+  logLH epsilon: general: 10.000000, brlen-triplet: 1000.000000
+  fast spr radius: AUTO
+  spr subtree cutoff: 1.000000
+  fast CLV updates: ON
+  branch lengths: proportional (ML estimate, algorithm: NR-FAST)
+  SIMD kernels: AVX2
+  parallelization: coarse-grained (auto), PTHREADS (8 threads), thread pinning: OFF
+
+WARNING: Running in REDO mode: existing checkpoints are ignored, and all result files will be overwritten!
+
+[00:00:00] Reading alignment from file: /workspace/NeuralNJ/data_gen/data/test/len1024/taxa20/G_l_1024_n_20_0_0.02_123.phy
+[00:00:00] Loaded alignment with 20 taxa and 1024 sites
+
+WARNING: Fully undetermined columns found: 1
+
+NOTE: Reduced alignment (with duplicates and gap-only sites/taxa removed) 
+NOTE: was saved to: /workspace/NeuralNJ/comparison_methods/raxml_output_test128_GTR+G/len1024_taxa20/G_l_1024_n_20_0_0.02_123.phy.raxml.reduced.phy
+
+Alignment comprises 1 partitions and 850 patterns
+
+Partition 0: noname
+Model: GTR+FO+G4m
+Alignment sites / patterns: 1023 / 850
+Gaps: 9.59 %
+Invariant sites: 24.34 %
+
+
+NOTE: Binary MSA file created: raxml_output_test128_GTR+G/len1024_taxa20/G_l_1024_n_20_0_0.02_123.phy.raxml.rba
+
+Parallelization scheme autoconfig: 8 worker(s) x 1 thread(s)
+
+[00:00:00] Generating 10 random starting tree(s) with 20 taxa
+[00:00:00] Generating 10 parsimony starting tree(s) with 20 taxa
+Parallel parsimony with 8 threads
+Parallel reduction/worker buffer size: 1 KB  / 0 KB
+
+[00:00:00] Data distribution: max. partitions/sites/weight per thread: 1 / 850 / 13600
+[00:00:00] Data distribution: max. searches per worker: 3
+
+Starting ML tree search with 20 distinct starting trees
+
+[00:00:00 -18561.471664] Initial branch length optimization
+[00:00:00 -16690.915190] Model parameter optimization (eps = 10.000000)
+[00:00:00 -16690.032781] AUTODETECT spr round 1 (radius: 5)
+[00:00:00 -13893.884436] AUTODETECT spr round 2 (radius: 10)
+[00:00:00 -13893.707980] AUTODETECT spr round 3 (radius: 15)
+[00:00:00 -13893.686819] SPR radius for FAST iterations: 10 (autodetect)
+[00:00:00 -13893.686819] Model parameter optimization (eps = 3.000000)
+[00:00:00 -13893.684447] FAST spr round 1 (radius: 10)
+[00:00:00 -13767.789914] FAST spr round 2 (radius: 10)
+[00:00:00 -13766.982444] Model parameter optimization (eps = 1.000000)
+[00:00:00 -13766.976809] SLOW spr round 1 (radius: 5)
+[00:00:00 -13766.976359] SLOW spr round 2 (radius: 10)
+[00:00:00] [worker #2] ML tree search #3, logLikelihood: -13766.976355
+[00:00:00] [worker #6] ML tree search #7, logLikelihood: -13766.976355
+[00:00:00 -13766.976355] SLOW spr round 3 (radius: 15)
+[00:00:00] [worker #7] ML tree search #8, logLikelihood: -13766.976355
+[00:00:00 -13766.976355] SLOW spr round 4 (radius: 20)
+[00:00:00] [worker #3] ML tree search #4, logLikelihood: -13766.976355
+[00:00:00] [worker #1] ML tree search #2, logLikelihood: -13766.976355
+[00:00:00 -13766.976355] Model parameter optimization (eps = 0.100000)
+
+[00:00:00] [worker #0] ML tree search #1, logLikelihood: -13766.976355
+
+[00:00:00 -18164.704834] Initial branch length optimization
+[00:00:00 -16765.941467] Model parameter optimization (eps = 10.000000)
+[00:00:00 -16764.804301] AUTODETECT spr round 1 (radius: 5)
+[00:00:00] [worker #5] ML tree search #6, logLikelihood: -13766.976355
+[00:00:00] [worker #4] ML tree search #5, logLikelihood: -13766.976355
+[00:00:00 -13833.330400] AUTODETECT spr round 2 (radius: 10)
+[00:00:00 -13833.076651] AUTODETECT spr round 3 (radius: 15)
+[00:00:00 -13833.039565] SPR radius for FAST iterations: 10 (autodetect)
+[00:00:00 -13833.039565] Model parameter optimization (eps = 3.000000)
+[00:00:00 -13833.034283] FAST spr round 1 (radius: 10)
+[00:00:00 -13767.896557] FAST spr round 2 (radius: 10)
+[00:00:00 -13766.976722] Model parameter optimization (eps = 1.000000)
+[00:00:00 -13766.976372] SLOW spr round 1 (radius: 5)
+[00:00:00] [worker #2] ML tree search #11, logLikelihood: -13766.976355
+[00:00:00] [worker #6] ML tree search #15, logLikelihood: -13766.976355
+[00:00:00] [worker #7] ML tree search #16, logLikelihood: -13766.976355
+[00:00:00 -13766.976355] SLOW spr round 2 (radius: 10)
+[00:00:00] [worker #3] ML tree search #12, logLikelihood: -13766.976355
+[00:00:00] [worker #5] ML tree search #14, logLikelihood: -13766.976355
+[00:00:00] [worker #4] ML tree search #13, logLikelihood: -13766.976355
+[00:00:00 -13766.976355] SLOW spr round 3 (radius: 15)
+[00:00:00 -13766.976355] SLOW spr round 4 (radius: 20)
+[00:00:00] [worker #1] ML tree search #10, logLikelihood: -13766.976355
+[00:00:00 -13766.976355] Model parameter optimization (eps = 0.100000)
+
+[00:00:00] [worker #0] ML tree search #9, logLikelihood: -13766.976355
+
+[00:00:00 -14480.290974] Initial branch length optimization
+[00:00:00 -13781.574442] Model parameter optimization (eps = 10.000000)
+[00:00:00 -13781.362716] AUTODETECT spr round 1 (radius: 5)
+[00:00:01 -13767.826651] AUTODETECT spr round 2 (radius: 10)
+[00:00:01 -13767.095184] AUTODETECT spr round 3 (radius: 15)
+[00:00:01 -13766.993977] AUTODETECT spr round 4 (radius: 20)
+[00:00:01 -13766.979180] SPR radius for FAST iterations: 15 (autodetect)
+[00:00:01 -13766.979180] Model parameter optimization (eps = 3.000000)
+[00:00:01 -13766.976837] FAST spr round 1 (radius: 15)
+[00:00:01 -13766.976370] Model parameter optimization (eps = 1.000000)
+[00:00:01 -13766.976358] SLOW spr round 1 (radius: 5)
+[00:00:01] [worker #2] ML tree search #19, logLikelihood: -13766.976355
+[00:00:01 -13766.976355] SLOW spr round 2 (radius: 10)
+[00:00:01] [worker #3] ML tree search #20, logLikelihood: -13766.976355
+[00:00:01 -13766.976355] SLOW spr round 3 (radius: 15)
+[00:00:01 -13766.976355] SLOW spr round 4 (radius: 20)
+[00:00:01] [worker #1] ML tree search #18, logLikelihood: -13766.976355
+[00:00:01 -13766.976355] Model parameter optimization (eps = 0.100000)
+
+[00:00:01] [worker #0] ML tree search #17, logLikelihood: -13766.976355
+
+
+Optimized model parameters:
+
+   Partition 0: noname
+   Rate heterogeneity: GAMMA (4 cats, mean),  alpha: 1.000000 (ML),  weights&rates: (0.250000,0.136954) (0.250000,0.476752) (0.250000,1.000000) (0.250000,2.386294) 
+   Base frequencies (ML): 0.250000 0.250000 0.250000 0.250000 
+   Substitution rates (ML): 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 
+
+
+Final LogLikelihood: -13766.976355
+
+AIC score: 27625.952710 / AICc score: 27630.383038 / BIC score: 27852.755469
+Free parameters (model + branch lengths): 46
+
+Best ML tree saved to: /workspace/NeuralNJ/comparison_methods/raxml_output_test128_GTR+G/len1024_taxa20/G_l_1024_n_20_0_0.02_123.phy.raxml.bestTree
+All ML trees saved to: /workspace/NeuralNJ/comparison_methods/raxml_output_test128_GTR+G/len1024_taxa20/G_l_1024_n_20_0_0.02_123.phy.raxml.mlTrees
+Optimized model saved to: /workspace/NeuralNJ/comparison_methods/raxml_output_test128_GTR+G/len1024_taxa20/G_l_1024_n_20_0_0.02_123.phy.raxml.bestModel
+
+Execution log saved to: /workspace/NeuralNJ/comparison_methods/raxml_output_test128_GTR+G/len1024_taxa20/G_l_1024_n_20_0_0.02_123.phy.raxml.log
+
+Analysis started: 27-May-2026 06:07:16 / finished: 27-May-2026 06:07:18
+
+Elapsed time: 1.335 seconds
+

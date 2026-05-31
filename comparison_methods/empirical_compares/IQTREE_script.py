@@ -40,7 +40,8 @@ def solve_dataset(dataset: str) -> list[dict[str, object]]:
 	input_dir = f"/workspace/NeuralNJ/empirical/{dataset}"
 	output_dir = f"/workspace/IQTree_{dataset}_Results"
 	abs_output_dir = os.path.abspath(output_dir)
-	ref_tree_path = f"/workspace/concatenation_species_trees/{dataset}/{dataset}.IQ-TREE.concatenation.tre"
+	special_dataset = dataset[0:-1] if dataset == "JarvD5a" else dataset
+	ref_tree_path = f"/workspace/concatenation_species_trees/{special_dataset}/{dataset}.IQ-TREE.concatenation.tre"
 
 	os.makedirs(abs_output_dir, exist_ok=True)
 
@@ -59,13 +60,17 @@ def solve_dataset(dataset: str) -> list[dict[str, object]]:
 		file_name = os.path.basename(msa_path)
 		base_name = os.path.splitext(file_name)[0]
 		prefix = os.path.join(abs_output_dir, base_name)
+		treefile = prefix + ".treefile"
+		if os.path.exists(treefile):
+			print(f"[{i}/{len(gene_files)}] Skipping (already done): {file_name}")
+			continue
 
 		print(f"[{i}/{len(gene_files)}] Running IQ-TREE: {file_name}...")
 
 		command = [
 			iqtree_exec,
 			"-s", msa_path,
-			"-st", "DNA"
+			"-st", "DNA",
 			"-m", "GTR+G",
 			"-seed", "2201",
 			"-pre", prefix,
