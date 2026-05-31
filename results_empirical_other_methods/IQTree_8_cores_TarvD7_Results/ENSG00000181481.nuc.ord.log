@@ -1,0 +1,129 @@
+IQ-TREE version 3.1.2 for Linux x86 64-bit built May  7 2026
+Developed by Bui Quang Minh, Thomas Wong, Nhan Ly-Trong, Huaiyan Ren
+Contributed by Lam-Tung Nguyen, Dominik Schrempf, Chris Bielow,
+Olga Chernomor, Michael Woodhams, Diep Thi Hoang, Heiko Schmidt
+
+Host:    8084c4e79f09 (AVX512, FMA3, 1133 GB RAM)
+Command: /workspace/iqtree-3.1.2-Linux/bin/iqtree3_intel -s /workspace/NeuralNJ/empirical/TarvD7/ENSG00000181481.nuc.ord.aln -st DNA -m GTR+G -T 8 -seed 2201 -pre /workspace/IQTree_8_cores_TarvD7_Results/ENSG00000181481.nuc.ord -quiet
+Seed:    2201 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Wed May 27 08:22:23 2026
+Kernel:  AVX+FMA - 8 threads (384 CPU cores detected)
+
+Reading alignment file /workspace/NeuralNJ/empirical/TarvD7/ENSG00000181481.nuc.ord.aln ... Fasta format detected
+Reading fasta file: done in 0.000558853 secs using 58.69% CPU
+Alignment most likely contains DNA/RNA sequences
+Constructing alignment: done in 0.00347114 secs using 784.7% CPU
+Alignment has 29 sequences with 1989 columns, 1269 distinct patterns
+777 parsimony-informative, 396 singleton sites, 816 constant sites
+                  Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 2.71797e-05 secs using 213.4% CPU
+   1  P001_Platypus      36.65%    failed      1.11%
+   2  P003_Wallaby       57.47%    passed      5.14%
+   3  P005_Rock_hyrax    57.62%    passed      6.05%
+   4  P006_Elephant      74.81%    failed      0.00%
+   5  P007_Armadillo     37.25%    passed     46.42%
+   6  P008_Sloth         58.22%    passed      8.00%
+   7  P009_Hedgehog      35.60%    passed      7.58%
+   8  P011_Dolphin       67.27%    failed      4.66%
+   9  P012_Cow           36.05%    passed     73.11%
+  10  P013_Pig           36.20%    passed      7.47%
+  11  P014_Alpaca        76.02%    failed      4.74%
+  12  P015_Horse         38.46%    passed     93.11%
+  13  P016_Dog           33.33%    passed     63.43%
+  14  P017_Cat           54.90%    passed     16.41%
+  15  P018_Megabat       47.06%    passed     11.52%
+  16  P019_Microbat      60.18%    passed     46.51%
+  17  P020_Rabbit        66.37%    failed      1.32%
+  18  P021_Pika          57.32%    passed      9.70%
+  19  P022_Squirrel      54.30%    failed      4.54%
+  20  P023_Guinea_pig    37.25%    passed     72.41%
+  21  P025_Mouse         37.10%    passed     88.35%
+  22  P028_Bushbaby      57.01%    failed      0.00%
+  23  P029_Mouse_lemur   53.54%    passed     30.53%
+  24  P031_Marmoset      34.54%    passed     84.65%
+  25  P032_Rhesus        73.60%    failed      0.00%
+  26  P033_Orangutan     34.84%    passed     43.77%
+  27  P034_Gorilla       46.00%    passed     57.83%
+  28  P035_Chimp         34.24%    passed     42.99%
+  29  P036_Human         34.84%    passed     52.57%
+WARNING: 14 sequences contain more than 50% gaps/ambiguity
+****  TOTAL              49.24%  8 sequences failed composition chi2 test (p-value<5%; df=3)
+Checking for duplicate sequences: done in 0.000157118 secs using 785.4% CPU
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.003 seconds
+
+NOTE: 4 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+1. Initial log-likelihood: -18029.692
+2. Current log-likelihood: -16949.508
+3. Current log-likelihood: -16938.505
+Optimal log-likelihood: -16938.481
+Rate parameters:  A-C: 1.73167  A-G: 4.41535  A-T: 1.12011  C-G: 1.66741  C-T: 3.74897  G-T: 1.00000
+Base frequencies:  A: 0.220  C: 0.282  G: 0.290  T: 0.207
+Gamma shape alpha: 1.289
+Parameters optimization took 3 rounds (0.069 sec)
+Wrote distance file to... 
+Computing ML distances based on estimated model parameters...
+Calculating distance matrix: done in 0.000379086 secs using 801.7% CPU
+Computing ML distances took 0.000568 sec (of wall-clock time) 0.004518 sec (of CPU time)
+Setting up auxiliary I and S matrices: done in 7.39098e-05 secs using 1074% CPU
+Constructing RapidNJ tree: done in 0.00156903 secs using 549% CPU
+Computing RapidNJ tree took 0.001692 sec (of wall-clock time) 0.013673 sec (of CPU time)
+Log-likelihood of RapidNJ tree: -17048.865
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 0.239 second
+Computing log-likelihood of 98 initial trees ... 0.518 seconds
+Current best score: -16938.481
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 1: -16919.997
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 2: -16918.910
+Iteration 10 / LogL: -16919.772 / Time: 0h:0m:1s
+Iteration 20 / LogL: -16919.740 / Time: 0h:0m:2s
+Finish initializing candidate tree set (3)
+Current best tree score: -16918.910 / CPU time: 2.235
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Iteration 30 / LogL: -16930.139 / Time: 0h:0m:3s (0h:0m:7s left)
+Iteration 40 / LogL: -16920.057 / Time: 0h:0m:4s (0h:0m:6s left)
+Iteration 50 / LogL: -16920.154 / Time: 0h:0m:4s (0h:0m:5s left)
+Iteration 60 / LogL: -16920.970 / Time: 0h:0m:5s (0h:0m:4s left)
+Iteration 70 / LogL: -16919.433 / Time: 0h:0m:6s (0h:0m:2s left)
+Iteration 80 / LogL: -16919.512 / Time: 0h:0m:7s (0h:0m:2s left)
+Iteration 90 / LogL: -16919.414 / Time: 0h:0m:7s (0h:0m:1s left)
+Iteration 100 / LogL: -16920.650 / Time: 0h:0m:8s (0h:0m:0s left)
+TREE SEARCH COMPLETED AFTER 103 ITERATIONS / Time: 0h:0m:9s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -16918.910
+Optimal log-likelihood: -16918.908
+Rate parameters:  A-C: 1.77437  A-G: 4.44323  A-T: 1.08871  C-G: 1.67019  C-T: 3.74277  G-T: 1.00000
+Base frequencies:  A: 0.220  C: 0.282  G: 0.290  T: 0.207
+Gamma shape alpha: 1.314
+Parameters optimization took 1 rounds (0.011 sec)
+BEST SCORE FOUND : -16918.908
+Total tree length: 5.585
+
+Total number of iterations: 103
+CPU time used for tree search: 70.663 sec (0h:1m:10s)
+Wall-clock time used for tree search: 8.938 sec (0h:0m:8s)
+Total CPU time used: 71.616 sec (0h:1m:11s)
+Total wall-clock time used: 9.057 sec (0h:0m:9s)
+
+Analysis results written to: 
+  IQ-TREE report:                /workspace/IQTree_8_cores_TarvD7_Results/ENSG00000181481.nuc.ord.iqtree
+  Maximum-likelihood tree:       /workspace/IQTree_8_cores_TarvD7_Results/ENSG00000181481.nuc.ord.treefile
+  Likelihood distances:          /workspace/IQTree_8_cores_TarvD7_Results/ENSG00000181481.nuc.ord.mldist
+  Screen log file:               /workspace/IQTree_8_cores_TarvD7_Results/ENSG00000181481.nuc.ord.log
+
+Date and Time: Wed May 27 08:22:32 2026

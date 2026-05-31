@@ -1,0 +1,151 @@
+IQ-TREE 3.1.2 built May  7 2026
+
+Input file name: /workspace/NeuralNJ/empirical/TarvD7/ENSG00000169228.nuc.ord.aln
+Type of analysis: tree reconstruction
+Random seed number: 2201
+
+REFERENCES
+----------
+
+To cite IQ-TREE 3 please use:
+
+Thomas K.F. Wong, Nhan Ly-Trong, Huaiyan Ren, Hector Banos, Andrew J. Roger,
+Edward Susko, Chris Bielow, Nicola De Maio, Nick Goldman, Matthew W. Hahn,
+Gavin Huttley, Robert Lanfear, Bui Quang Minh (2025)
+IQ-TREE 3: Phylogenomic Inference Software using Complex Evolutionary Models.
+Submitted.
+
+SEQUENCE ALIGNMENT
+------------------
+
+Input data: 21 sequences with 636 nucleotide sites
+Number of constant sites: 390 (= 61.3208% of all sites)
+Number of invariant (constant or ambiguous constant) sites: 390 (= 61.3208% of all sites)
+Number of parsimony informative sites: 140
+Number of distinct site patterns: 269
+
+SUBSTITUTION PROCESS
+--------------------
+
+Model of substitution: GTR+F+G4
+
+Rate parameter R:
+
+  A-C: 1.5752
+  A-G: 3.9111
+  A-T: 1.2702
+  C-G: 1.1734
+  C-T: 9.6733
+  G-T: 1.0000
+
+State frequencies: (empirical counts from alignment)
+
+  pi(A) = 0.2393
+  pi(C) = 0.2358
+  pi(G) = 0.3243
+  pi(T) = 0.2005
+
+Rate matrix Q:
+
+  A    -0.889    0.1743    0.5952    0.1195
+  C    0.1769    -1.265    0.1786      0.91
+  G    0.4392    0.1298   -0.6631   0.09407
+  T    0.1426      1.07    0.1522    -1.365
+
+Model of rate heterogeneity: Gamma with 4 categories
+Gamma shape alpha: 0.3974
+
+ Category  Relative_rate  Proportion
+  1         0.01634        0.25
+  2         0.1798         0.25
+  3         0.7285         0.25
+  4         3.075          0.25
+Relative rates are computed as MEAN of the portion of the Gamma distribution falling in the category.
+
+MAXIMUM LIKELIHOOD TREE
+-----------------------
+
+Log-likelihood of the tree: -3200.8942 (s.e. 124.3551)
+Unconstrained log-likelihood (without tree): -3006.0480
+Number of free parameters (#branches + #model parameters): 48
+Akaike information criterion (AIC) score: 6497.7885
+Corrected Akaike information criterion (AICc) score: 6505.8021
+Bayesian information criterion (BIC) score: 6711.6380
+
+Total tree length (sum of branch lengths): 1.1772
+Sum of internal branch lengths: 0.3619 (30.7432% of tree length)
+
+WARNING: 1 near-zero internal branches (<0.0016) should be treated with caution
+         Such branches are denoted by '**' in the figure below
+
+NOTE: Tree is UNROOTED although outgroup taxon 'P002_Opossum' is drawn at root
+
++---P002_Opossum
+|
++--P003_Wallaby
+|
+|                   +---P005_Rock_hyrax
++-------------------|
+                    |  +--P006_Elephant
+                    +--|
+                       |  +---P007_Armadillo
+                       +--|
+                          |           +--P011_Dolphin
+                          |        +--|
+                          |        |  +--P012_Cow
+                          |     +--|
+                          |     |  +---P013_Pig
+                          |  +--|
+                          |  |  |  +--P015_Horse
+                          |  |  +--|
+                          |  |     |  +--P016_Dog
+                          |  |     +--|
+                          |  |        +--P017_Cat
+                          +--|
+                             |           +----P021_Pika
+                             |        +--|
+                             |        |  |        +--P025_Mouse
+                             |        |  +--------|
+                             |        |           +--P026_Rat
+                             |     +--|
+                             |     |  +------------------P024_Kangaroo_rat
+                             |  +--|
+                             |  |  +----P023_Guinea_pig
+                             +--|
+                                |     +--P031_Marmoset
+                                |  +**|
+                                |  |  +-----------------------------P032_Rhesus
+                                +--|
+                                   |     +--P033_Orangutan
+                                   |  +--|
+                                   |  |  +**P036_Human
+                                   +--|
+                                      +**P035_Chimp
+
+Tree in newick format:
+
+(P002_Opossum:0.0370068002,P003_Wallaby:0.0193228885,(P005_Rock_hyrax:0.0371456661,(P006_Elephant:0.0211167061,(P007_Armadillo:0.0363858711,((((P011_Dolphin:0.0166967562,P012_Cow:0.0197983212):0.0020578479,P013_Pig:0.0328500072):0.0062167337,(P015_Horse:0.0281254261,(P016_Dog:0.0192952022,P017_Cat:0.0075948018):0.0075378607):0.0029080801):0.0110123243,((((P021_Pika:0.0466574228,(P025_Mouse:0.0196230371,P026_Rat:0.0130320967):0.0717382481):0.0072801402,P024_Kangaroo_rat:0.1544878900):0.0069924311,P023_Guinea_pig:0.0468763386):0.0045496670,((P031_Marmoset:0.0136259062,P032_Rhesus:0.2439661942):0.0000020254,((P033_Orangutan:0.0016499640,P036_Human:0.0000010000):0.0016502177,P035_Chimp:0.0000010000):0.0084679920):0.0243292307):0.0035403365):0.0072204203):0.0079096200):0.0237600559):0.1647220093);
+
+ALISIM COMMAND
+--------------
+To simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis, you can use the following command:
+
+--alisim simulated_MSA -t /workspace/IQTree_8_cores_TarvD7_Results/ENSG00000169228.nuc.ord.treefile -m "GTR{1.57516,3.9111,1.27022,1.17338,9.67333}+F{0.239346,0.235844,0.324327,0.200484}+G4{0.397405}" --length 636
+
+To mimic the alignment used to produce this analysis, i.e. simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis *and* copying the same gap positions as the original alignment, you can use the following command:
+
+iqtree -s /workspace/NeuralNJ/empirical/TarvD7/ENSG00000169228.nuc.ord.aln --alisim mimicked_MSA
+
+To simulate any number of alignments in either of the two commandlines above, use the --num-alignments options, for example mimic 100 alignments you would use the command line:
+
+iqtree -s /workspace/NeuralNJ/empirical/TarvD7/ENSG00000169228.nuc.ord.aln --alisim mimicked_MSA --num-alignments 100
+
+For more information on using AliSim, please visit: www.iqtree.org/doc/AliSim
+
+TIME STAMP
+----------
+
+Date and time: Wed May 27 04:30:44 2026
+Total CPU time used: 43.4747 seconds (0h:0m:43s)
+Total wall-clock time used: 5.42841 seconds (0h:0m:5s)
+

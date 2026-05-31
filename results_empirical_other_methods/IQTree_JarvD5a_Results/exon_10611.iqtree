@@ -1,0 +1,119 @@
+IQ-TREE 3.1.2 built May  7 2026
+
+Input file name: /workspace/NeuralNJ/empirical/JarvD5a/exon_10611.fasta
+Type of analysis: tree reconstruction
+Random seed number: 2201
+
+REFERENCES
+----------
+
+To cite IQ-TREE 3 please use:
+
+Thomas K.F. Wong, Nhan Ly-Trong, Huaiyan Ren, Hector Banos, Andrew J. Roger,
+Edward Susko, Chris Bielow, Nicola De Maio, Nick Goldman, Matthew W. Hahn,
+Gavin Huttley, Robert Lanfear, Bui Quang Minh (2025)
+IQ-TREE 3: Phylogenomic Inference Software using Complex Evolutionary Models.
+Submitted.
+
+SEQUENCE ALIGNMENT
+------------------
+
+Input data: 46 sequences with 104 nucleotide sites
+Number of constant sites: 96 (= 92.3077% of all sites)
+Number of invariant (constant or ambiguous constant) sites: 96 (= 92.3077% of all sites)
+Number of parsimony informative sites: 1
+Number of distinct site patterns: 11
+
+SUBSTITUTION PROCESS
+--------------------
+
+Model of substitution: GTR+F+G4
+
+Rate parameter R:
+
+  A-C: 41.4120
+  A-G: 56.9552
+  A-T: 100.0000
+  C-G: 55.3894
+  C-T: 65.4155
+  G-T: 1.0000
+
+State frequencies: (empirical counts from alignment)
+
+  pi(A) = 0.3423
+  pi(C) = 0.1769
+  pi(G) = 0.2577
+  pi(T) = 0.2231
+
+Rate matrix Q:
+
+  A     -1.09    0.1802    0.3609    0.5486
+  C    0.3486    -1.058     0.351    0.3588
+  G    0.4794     0.241   -0.7259  0.005486
+  T    0.8418    0.2846  0.006337    -1.133
+
+Model of rate heterogeneity: Gamma with 4 categories
+Gamma shape alpha: 998.4
+
+ Category  Relative_rate  Proportion
+  1         0.9601         0.25
+  2         0.9894         0.25
+  3         1.01           0.25
+  4         1.041          0.25
+Relative rates are computed as MEAN of the portion of the Gamma distribution falling in the category.
+
+MAXIMUM LIKELIHOOD TREE
+-----------------------
+
+Log-likelihood of the tree: -184.3896 (s.e. 12.3127)
+Unconstrained log-likelihood (without tree): -174.0874
+Number of free parameters (#branches + #model parameters): 16
+Akaike information criterion (AIC) score: 400.7792
+Corrected Akaike information criterion (AICc) score: 407.0321
+Bayesian information criterion (BIC) score: 443.0895
+
+Total tree length (sum of branch lengths): 0.0785
+Sum of internal branch lengths: 0.0097 (12.3499% of tree length)
+
+WARNING: 1 near-zero internal branches (<0.0096) should be treated with caution
+         Such branches are denoted by '**' in the figure below
+
+NOTE: Tree is UNROOTED although outgroup taxon 'ACACH' is drawn at root
+
++**ACACH
+|
++**APAVI
+|
+|  +-----------------------------------MANVI
++**|
+   |          +**STRCA
+   +----------|
+              +-----------------------------------------------TINMA
+
+Tree in newick format:
+
+(ACACH:0.0000010000,APAVI:0.0000010000,(MANVI:0.0294771743,(STRCA:0.0000010000,TINMA:0.0393344880):0.0096949674):0.0000010000);
+
+ALISIM COMMAND
+--------------
+To simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis, you can use the following command:
+
+--alisim simulated_MSA -t /workspace/IQTree_JarvD5a_Results/exon_10611.treefile -m "GTR{41.412,56.9552,100,55.3894,65.4155}+F{0.342308,0.176923,0.257692,0.223077}+G4{998.448}" --length 104
+
+To mimic the alignment used to produce this analysis, i.e. simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis *and* copying the same gap positions as the original alignment, you can use the following command:
+
+iqtree -s /workspace/NeuralNJ/empirical/JarvD5a/exon_10611.fasta --alisim mimicked_MSA
+
+To simulate any number of alignments in either of the two commandlines above, use the --num-alignments options, for example mimic 100 alignments you would use the command line:
+
+iqtree -s /workspace/NeuralNJ/empirical/JarvD5a/exon_10611.fasta --alisim mimicked_MSA --num-alignments 100
+
+For more information on using AliSim, please visit: www.iqtree.org/doc/AliSim
+
+TIME STAMP
+----------
+
+Date and time: Wed May 27 10:46:03 2026
+Total CPU time used: 0.077943 seconds (0h:0m:0s)
+Total wall-clock time used: 0.044848 seconds (0h:0m:0s)
+

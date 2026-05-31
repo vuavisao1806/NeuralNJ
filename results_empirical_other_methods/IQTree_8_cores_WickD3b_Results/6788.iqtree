@@ -1,0 +1,140 @@
+IQ-TREE 3.1.2 built May  7 2026
+
+Input file name: /workspace/NeuralNJ/empirical/WickD3b/6788.aln
+Type of analysis: tree reconstruction
+Random seed number: 2201
+
+REFERENCES
+----------
+
+To cite IQ-TREE 3 please use:
+
+Thomas K.F. Wong, Nhan Ly-Trong, Huaiyan Ren, Hector Banos, Andrew J. Roger,
+Edward Susko, Chris Bielow, Nicola De Maio, Nick Goldman, Matthew W. Hahn,
+Gavin Huttley, Robert Lanfear, Bui Quang Minh (2025)
+IQ-TREE 3: Phylogenomic Inference Software using Complex Evolutionary Models.
+Submitted.
+
+SEQUENCE ALIGNMENT
+------------------
+
+Input data: 17 sequences with 2006 nucleotide sites
+Number of constant sites: 933 (= 46.5105% of all sites)
+Number of invariant (constant or ambiguous constant) sites: 933 (= 46.5105% of all sites)
+Number of parsimony informative sites: 645
+Number of distinct site patterns: 1002
+
+SUBSTITUTION PROCESS
+--------------------
+
+Model of substitution: GTR+F+G4
+
+Rate parameter R:
+
+  A-C: 2.7093
+  A-G: 3.1889
+  A-T: 1.4098
+  C-G: 1.6973
+  C-T: 2.9885
+  G-T: 1.0000
+
+State frequencies: (empirical counts from alignment)
+
+  pi(A) = 0.2835
+  pi(C) = 0.2176
+  pi(G) = 0.2679
+  pi(T) = 0.231
+
+Rate matrix Q:
+
+  A    -1.089    0.3627    0.5256    0.2004
+  C    0.4726    -1.177    0.2797    0.4248
+  G    0.5563    0.2272   -0.9256    0.1421
+  T    0.2459       0.4    0.1648   -0.8108
+
+Model of rate heterogeneity: Gamma with 4 categories
+Gamma shape alpha: 0.6179
+
+ Category  Relative_rate  Proportion
+  1         0.05682        0.25
+  2         0.3221         0.25
+  3         0.8902         0.25
+  4         2.731          0.25
+Relative rates are computed as MEAN of the portion of the Gamma distribution falling in the category.
+
+MAXIMUM LIKELIHOOD TREE
+-----------------------
+
+Log-likelihood of the tree: -13197.0285 (s.e. 274.2652)
+Unconstrained log-likelihood (without tree): -11587.0738
+Number of free parameters (#branches + #model parameters): 40
+Akaike information criterion (AIC) score: 26474.0570
+Corrected Akaike information criterion (AICc) score: 26475.7262
+Bayesian information criterion (BIC) score: 26698.2129
+
+Total tree length (sum of branch lengths): 8.1346
+Sum of internal branch lengths: 3.0036 (36.9234% of tree length)
+
+NOTE: Tree is UNROOTED although outgroup taxon 'Chlorokybus_atmophyticus' is drawn at root
+
++----------------------------------Chlorokybus_atmophyticus
+|
+|                                                       +--Thuidium_delicatulum
+|                                                    +--|
+|                                                    |  +--Rhynchostegium_serrulatum
+|                                +-------------------|
+|                                |                   +--Physcomitrella_patens
+|                          +-----|
+|                          |     +-------------Nothoceros_vincentianus
+|                 +--------|
+|                 |        +----------------Psilotum_nudum
+|            +----|
+|            |    +----------Pinus_taeda
++------------|
+|            |         +-------Persea_americana
+|            |   +-----|
+|            |   |     |          +---------------Arabidopsis_thaliana
+|            |   |     |      +---|
+|            |   |     |      |   +-------Carica_papaya
+|            |   |     |  +---|
+|            |   |     |  |   +------Populus_trichocarpa
+|            |   |     +--|
+|            |   |        +-------Vitis_vinifera
+|            +---|
+|                |                    +---Brachypodium_distachyon
+|                |                 +--|
+|                |                 |  |   +--Sorghum_bicolor
+|                |                 |  +---|
+|                |                 |      +--Zea_mays
+|                +-----------------|
+|                                  +--Oryza_sativa
+|
++-------------------------------------Mougeotia_sp
+
+Tree in newick format:
+
+(Chlorokybus_atmophyticus:0.9927167334,((((((Thuidium_delicatulum:0.0419285698,Rhynchostegium_serrulatum:0.0310054968):0.1085581370,Physcomitrella_patens:0.0893787627):0.5719568144,Nothoceros_vincentianus:0.4127863553):0.1755151522,Psilotum_nudum:0.4846939678):0.2605938134,Pinus_taeda:0.3078667058):0.1478881717,((Persea_americana:0.2277831701,(((Arabidopsis_thaliana:0.4476973697,Carica_papaya:0.2306363954):0.1279089092,Populus_trichocarpa:0.2027893581):0.1368155879,Vitis_vinifera:0.2433698297):0.1061866544):0.1847283897,((Brachypodium_distachyon:0.1329814707,(Sorghum_bicolor:0.0738189384,Zea_mays:0.0549860037):0.1189639808):0.0303329481,Oryza_sativa:0.0725674333):0.5266137552):0.1361452277):0.3713786551,Mougeotia_sp:1.0840497823);
+
+ALISIM COMMAND
+--------------
+To simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis, you can use the following command:
+
+--alisim simulated_MSA -t /workspace/IQTree_8_cores_WickD3b_Results/6788.treefile -m "GTR{2.70934,3.18895,1.40978,1.69727,2.98847}+F{0.28352,0.217583,0.267874,0.231023}+G4{0.617923}" --length 2006
+
+To mimic the alignment used to produce this analysis, i.e. simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis *and* copying the same gap positions as the original alignment, you can use the following command:
+
+iqtree -s /workspace/NeuralNJ/empirical/WickD3b/6788.aln --alisim mimicked_MSA
+
+To simulate any number of alignments in either of the two commandlines above, use the --num-alignments options, for example mimic 100 alignments you would use the command line:
+
+iqtree -s /workspace/NeuralNJ/empirical/WickD3b/6788.aln --alisim mimicked_MSA --num-alignments 100
+
+For more information on using AliSim, please visit: www.iqtree.org/doc/AliSim
+
+TIME STAMP
+----------
+
+Date and time: Wed May 27 18:43:14 2026
+Total CPU time used: 35.2454 seconds (0h:0m:35s)
+Total wall-clock time used: 4.42275 seconds (0h:0m:4s)
+

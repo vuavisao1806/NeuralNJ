@@ -1,0 +1,116 @@
+IQ-TREE 3.1.2 built May  7 2026
+
+Input file name: /workspace/NeuralNJ/empirical/WickD3b/6201.aln
+Type of analysis: tree reconstruction
+Random seed number: 2201
+
+REFERENCES
+----------
+
+To cite IQ-TREE 3 please use:
+
+Thomas K.F. Wong, Nhan Ly-Trong, Huaiyan Ren, Hector Banos, Andrew J. Roger,
+Edward Susko, Chris Bielow, Nicola De Maio, Nick Goldman, Matthew W. Hahn,
+Gavin Huttley, Robert Lanfear, Bui Quang Minh (2025)
+IQ-TREE 3: Phylogenomic Inference Software using Complex Evolutionary Models.
+Submitted.
+
+SEQUENCE ALIGNMENT
+------------------
+
+Input data: 5 sequences with 3978 nucleotide sites
+Number of constant sites: 1602 (= 40.2715% of all sites)
+Number of invariant (constant or ambiguous constant) sites: 1602 (= 40.2715% of all sites)
+Number of parsimony informative sites: 565
+Number of distinct site patterns: 1153
+
+SUBSTITUTION PROCESS
+--------------------
+
+Model of substitution: GTR+F+G4
+
+Rate parameter R:
+
+  A-C: 1.8756
+  A-G: 3.6364
+  A-T: 1.0833
+  C-G: 1.9129
+  C-T: 3.6265
+  G-T: 1.0000
+
+State frequencies: (empirical counts from alignment)
+
+  pi(A) = 0.3419
+  pi(C) = 0.1876
+  pi(G) = 0.2382
+  pi(T) = 0.2323
+
+Rate matrix Q:
+
+  A   -0.9171    0.2195    0.5405     0.157
+  C    0.4001     -1.21    0.2843    0.5256
+  G    0.7757    0.2239    -1.145    0.1449
+  T    0.2311    0.4244    0.1486   -0.8042
+
+Model of rate heterogeneity: Gamma with 4 categories
+Gamma shape alpha: 1.738
+
+ Category  Relative_rate  Proportion
+  1         0.2599         0.25
+  2         0.6239         0.25
+  3         1.062          0.25
+  4         2.054          0.25
+Relative rates are computed as MEAN of the portion of the Gamma distribution falling in the category.
+
+MAXIMUM LIKELIHOOD TREE
+-----------------------
+
+Log-likelihood of the tree: -16667.9134 (s.e. 143.1396)
+Unconstrained log-likelihood (without tree): -23306.7107
+Number of free parameters (#branches + #model parameters): 16
+Akaike information criterion (AIC) score: 33367.8269
+Corrected Akaike information criterion (AICc) score: 33367.9642
+Bayesian information criterion (BIC) score: 33468.4434
+
+Total tree length (sum of branch lengths): 2.8133
+Sum of internal branch lengths: 0.1666 (5.9224% of tree length)
+
+NOTE: Tree is UNROOTED although outgroup taxon 'Diospyros_malabarica' is drawn at root
+
++----------------Diospyros_malabarica
+|
+|     +-------------------------------Arabidopsis_thaliana
++-----|
+|     +-----------Carica_papaya
+|
+|  +--------------------------------------------------------Brachypodium_distachyon
++--|
+   +------------Vitis_vinifera
+
+Tree in newick format:
+
+(Diospyros_malabarica:0.3471611977,(Arabidopsis_thaliana:0.6471183570,Carica_papaya:0.2492160967):0.1260037904,(Brachypodium_distachyon:1.1385617214,Vitis_vinifera:0.2646314323):0.0406118336);
+
+ALISIM COMMAND
+--------------
+To simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis, you can use the following command:
+
+--alisim simulated_MSA -t /workspace/IQTree_WickD3b_Results/6201.treefile -m "GTR{1.87558,3.6364,1.08334,1.91285,3.62646}+F{0.341902,0.187583,0.23823,0.232285}+G4{1.738}" --length 3978
+
+To mimic the alignment used to produce this analysis, i.e. simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis *and* copying the same gap positions as the original alignment, you can use the following command:
+
+iqtree -s /workspace/NeuralNJ/empirical/WickD3b/6201.aln --alisim mimicked_MSA
+
+To simulate any number of alignments in either of the two commandlines above, use the --num-alignments options, for example mimic 100 alignments you would use the command line:
+
+iqtree -s /workspace/NeuralNJ/empirical/WickD3b/6201.aln --alisim mimicked_MSA --num-alignments 100
+
+For more information on using AliSim, please visit: www.iqtree.org/doc/AliSim
+
+TIME STAMP
+----------
+
+Date and time: Wed May 27 03:38:36 2026
+Total CPU time used: 0.635592 seconds (0h:0m:0s)
+Total wall-clock time used: 0.456154 seconds (0h:0m:0s)
+

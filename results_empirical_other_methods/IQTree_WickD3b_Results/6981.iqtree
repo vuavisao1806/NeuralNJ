@@ -1,0 +1,143 @@
+IQ-TREE 3.1.2 built May  7 2026
+
+Input file name: /workspace/NeuralNJ/empirical/WickD3b/6981.aln
+Type of analysis: tree reconstruction
+Random seed number: 2201
+
+REFERENCES
+----------
+
+To cite IQ-TREE 3 please use:
+
+Thomas K.F. Wong, Nhan Ly-Trong, Huaiyan Ren, Hector Banos, Andrew J. Roger,
+Edward Susko, Chris Bielow, Nicola De Maio, Nick Goldman, Matthew W. Hahn,
+Gavin Huttley, Robert Lanfear, Bui Quang Minh (2025)
+IQ-TREE 3: Phylogenomic Inference Software using Complex Evolutionary Models.
+Submitted.
+
+SEQUENCE ALIGNMENT
+------------------
+
+Input data: 17 sequences with 266 nucleotide sites
+Number of constant sites: 113 (= 42.4812% of all sites)
+Number of invariant (constant or ambiguous constant) sites: 113 (= 42.4812% of all sites)
+Number of parsimony informative sites: 99
+Number of distinct site patterns: 167
+
+SUBSTITUTION PROCESS
+--------------------
+
+Model of substitution: GTR+F+G4
+
+Rate parameter R:
+
+  A-C: 4.7873
+  A-G: 5.7994
+  A-T: 1.5984
+  C-G: 3.2793
+  C-T: 4.9269
+  G-T: 1.0000
+
+State frequencies: (empirical counts from alignment)
+
+  pi(A) = 0.2551
+  pi(C) = 0.2514
+  pi(G) = 0.2249
+  pi(T) = 0.2686
+
+Rate matrix Q:
+
+  A    -1.106    0.4533    0.4912    0.1617
+  C    0.4598    -1.236    0.2777    0.4983
+  G     0.557    0.3105   -0.9686    0.1011
+  T    0.1535    0.4665    0.0847   -0.7047
+
+Model of rate heterogeneity: Gamma with 4 categories
+Gamma shape alpha: 0.6116
+
+ Category  Relative_rate  Proportion
+  1         0.05552        0.25
+  2         0.3187         0.25
+  3         0.8871         0.25
+  4         2.739          0.25
+Relative rates are computed as MEAN of the portion of the Gamma distribution falling in the category.
+
+MAXIMUM LIKELIHOOD TREE
+-----------------------
+
+Log-likelihood of the tree: -1929.1940 (s.e. 96.3136)
+Unconstrained log-likelihood (without tree): -1221.6363
+Number of free parameters (#branches + #model parameters): 40
+Akaike information criterion (AIC) score: 3938.3879
+Corrected Akaike information criterion (AICc) score: 3952.9657
+Bayesian information criterion (BIC) score: 4081.7278
+
+Total tree length (sum of branch lengths): 5.1364
+Sum of internal branch lengths: 1.2475 (24.2876% of tree length)
+
+WARNING: 1 near-zero internal branches (<0.0038) should be treated with caution
+         Such branches are denoted by '**' in the figure below
+
+NOTE: Tree is UNROOTED although outgroup taxon 'Acorus_americanus' is drawn at root
+
++-----------------Acorus_americanus
+|
+|                    +--Catharanthus_roseus
+|                 +--|
+|                 |  +-------Nuphar_advena
+|              +--|
+|              |  +------------Rosmarinus_officinalis
+|           +--|
+|           |  |            +---Cedrus_libani
+|           |  |   +--------|
+|           |  |   |        +----------------------------------Selaginella_moellendorffii_genome
+|           |  +---|
+|           |      +----------Podophyllum_peltatum
+|        +--|
+|        |  +-----Vitis_vinifera
+|     +--|
+|     |  |     +--Persea_americana
+|     |  |  +--|
+|     |  |  |  +-----------Arabidopsis_thaliana
+|     |  +**|
+|     |     |  +-----Carica_papaya
+|     |     +--|
+|     |        +---------Medicago_truncatula
+|  +--|
+|  |  +--------Hibiscus_cannabinus
++--|
+|  |                +---Oryza_sativa
+|  |             +--|
+|  |             |  +--Sorghum_bicolor
+|  +-------------|
+|                +--Zea_mays
+|
++----Liriodendron_tulipifera
+
+Tree in newick format:
+
+(Acorus_americanus:0.4695882253,(((((((Catharanthus_roseus:0.0943206100,Nuphar_advena:0.2131158315):0.0481403974,Rosmarinus_officinalis:0.3434036473):0.0831553807,((Cedrus_libani:0.1212820774,Selaginella_moellendorffii_genome:0.8992835421):0.2443861722,Podophyllum_peltatum:0.2819946178):0.1234614973):0.0086734505,Vitis_vinifera:0.1541746763):0.0364584210,((Persea_americana:0.0536992609,Arabidopsis_thaliana:0.3228277928):0.0837660262,(Carica_papaya:0.1561400500,Medicago_truncatula:0.2613080137):0.0400705780):0.0000025087):0.0219003494,Hibiscus_cannabinus:0.2318600307):0.0904960097,((Oryza_sativa:0.1012443621,Sorghum_bicolor:0.0266014951):0.0195494097,Zea_mays:0.0279968495):0.3660042940):0.0814409769,Liriodendron_tulipifera:0.1300437501);
+
+ALISIM COMMAND
+--------------
+To simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis, you can use the following command:
+
+--alisim simulated_MSA -t /workspace/IQTree_WickD3b_Results/6981.treefile -m "GTR{4.78727,5.79941,1.59837,3.27928,4.92686}+F{0.255053,0.251442,0.224922,0.268583}+G4{0.611645}" --length 266
+
+To mimic the alignment used to produce this analysis, i.e. simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis *and* copying the same gap positions as the original alignment, you can use the following command:
+
+iqtree -s /workspace/NeuralNJ/empirical/WickD3b/6981.aln --alisim mimicked_MSA
+
+To simulate any number of alignments in either of the two commandlines above, use the --num-alignments options, for example mimic 100 alignments you would use the command line:
+
+iqtree -s /workspace/NeuralNJ/empirical/WickD3b/6981.aln --alisim mimicked_MSA --num-alignments 100
+
+For more information on using AliSim, please visit: www.iqtree.org/doc/AliSim
+
+TIME STAMP
+----------
+
+Date and time: Wed May 27 04:59:27 2026
+Total CPU time used: 1.24555 seconds (0h:0m:1s)
+Total wall-clock time used: 1.07102 seconds (0h:0m:1s)
+

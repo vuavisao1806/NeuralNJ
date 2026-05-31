@@ -477,7 +477,7 @@ def Agmax_one_instance(cfgs, MSA_file, policy_network, env, c_best_tree_file=Non
     return dict(best_tree_str=best_tree_str, score=score, raw_tree_score=raw_tree_score, c_best_tree_score=c_best_tree_score, rf_distance=rf_distance, rf_distance_raw=rf_distance_raw, rf_distance_c_raw=rf_distance_c_raw)
 
 def init_inference_time_csv(csv_file):
-	with open(csv_file, "w", newline="") as f:
+	with open(csv_file, "a", newline="") as f:
 		writer = csv.writer(f)
 		writer.writerow([
 			"instance",

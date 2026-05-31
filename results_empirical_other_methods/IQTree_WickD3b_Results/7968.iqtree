@@ -1,0 +1,140 @@
+IQ-TREE 3.1.2 built May  7 2026
+
+Input file name: /workspace/NeuralNJ/empirical/WickD3b/7968.aln
+Type of analysis: tree reconstruction
+Random seed number: 2201
+
+REFERENCES
+----------
+
+To cite IQ-TREE 3 please use:
+
+Thomas K.F. Wong, Nhan Ly-Trong, Huaiyan Ren, Hector Banos, Andrew J. Roger,
+Edward Susko, Chris Bielow, Nicola De Maio, Nick Goldman, Matthew W. Hahn,
+Gavin Huttley, Robert Lanfear, Bui Quang Minh (2025)
+IQ-TREE 3: Phylogenomic Inference Software using Complex Evolutionary Models.
+Submitted.
+
+SEQUENCE ALIGNMENT
+------------------
+
+Input data: 17 sequences with 1236 nucleotide sites
+Number of constant sites: 566 (= 45.7929% of all sites)
+Number of invariant (constant or ambiguous constant) sites: 566 (= 45.7929% of all sites)
+Number of parsimony informative sites: 444
+Number of distinct site patterns: 712
+
+SUBSTITUTION PROCESS
+--------------------
+
+Model of substitution: GTR+F+G4
+
+Rate parameter R:
+
+  A-C: 2.1403
+  A-G: 1.8758
+  A-T: 1.0188
+  C-G: 1.3844
+  C-T: 2.5909
+  G-T: 1.0000
+
+State frequencies: (empirical counts from alignment)
+
+  pi(A) = 0.3285
+  pi(C) = 0.2186
+  pi(G) = 0.2664
+  pi(T) = 0.1865
+
+Rate matrix Q:
+
+  A   -0.9393    0.3797    0.4054    0.1542
+  C    0.5705    -1.262    0.2992    0.3921
+  G       0.5    0.2456   -0.8969    0.1513
+  T    0.2716    0.4596    0.2161   -0.9473
+
+Model of rate heterogeneity: Gamma with 4 categories
+Gamma shape alpha: 0.8862
+
+ Category  Relative_rate  Proportion
+  1         0.1137         0.25
+  2         0.4396         0.25
+  3         0.9782         0.25
+  4         2.468          0.25
+Relative rates are computed as MEAN of the portion of the Gamma distribution falling in the category.
+
+MAXIMUM LIKELIHOOD TREE
+-----------------------
+
+Log-likelihood of the tree: -8811.7523 (s.e. 233.4950)
+Unconstrained log-likelihood (without tree): -7060.8679
+Number of free parameters (#branches + #model parameters): 40
+Akaike information criterion (AIC) score: 17703.5045
+Corrected Akaike information criterion (AICc) score: 17706.2493
+Bayesian information criterion (BIC) score: 17908.2899
+
+Total tree length (sum of branch lengths): 11.0729
+Sum of internal branch lengths: 2.2977 (20.7502% of tree length)
+
+NOTE: Tree is UNROOTED although outgroup taxon 'Boehmeria_nivea' is drawn at root
+
++--Boehmeria_nivea
+|
+|              +--Eschscholzia_californica
+|           +--|
+|           |  |  +--Kadsura_heteroclita
+|           |  +--|
+|           |     +-------Kochia_scoparia
+|        +--|
+|        |  |          +--Sabal_bermudana
+|        |  |     +----|
+|        |  |     |    |             +----------------------------------------Nuphar_advena
+|        |  |     |    |          +--|
+|        |  |     |    |          |  +--Oryza_sativa
+|        |  |     |    |       +--|
+|        |  |     |    |       |  +--Brachypodium_distachyon
+|        |  |     |    +-------|
+|        |  |     |            |  +--Sorghum_bicolor
+|        |  |     |            +--|
+|        |  |     |               +--Zea_mays
+|        |  |  +--|
+|        |  |  |  +---Persea_americana
+|        |  +--|
+|        |     +--Sarcandra_glabra
+|     +--|
+|     |  |  +--Hibiscus_cannabinus
+|     |  +--|
+|     |     +----Arabidopsis_thaliana
+|  +--|
+|  |  +--Allamanda_cathartica
++--|
+|  +--Diospyros_malabarica
+|
++--Rosmarinus_officinalis
+
+Tree in newick format:
+
+(Boehmeria_nivea:0.2270297914,(((((Eschscholzia_californica:0.2205796610,(Kadsura_heteroclita:0.3390729417,Kochia_scoparia:0.8319739049):0.2146479775):0.0889436482,(((Sabal_bermudana:0.0712240809,(((Nuphar_advena:4.2225575838,Oryza_sativa:0.1862859671):0.0460609541,Brachypodium_distachyon:0.2835619526):0.0425165514,(Sorghum_bicolor:0.0630507228,Zea_mays:0.0290784027):0.1228213801):0.8642244101):0.5558656644,Persea_americana:0.4308326624):0.0364433660,Sarcandra_glabra:0.2830795918):0.0657354268):0.0500536262,(Hibiscus_cannabinus:0.2723695916,Arabidopsis_thaliana:0.5650944947):0.0337374997):0.0398849403,Allamanda_cathartica:0.2515880715):0.0926115843,Diospyros_malabarica:0.1792956025):0.0441139479,Rosmarinus_officinalis:0.3186086274);
+
+ALISIM COMMAND
+--------------
+To simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis, you can use the following command:
+
+--alisim simulated_MSA -t /workspace/IQTree_WickD3b_Results/7968.treefile -m "GTR{2.14028,1.87576,1.0188,1.38436,2.59086}+F{0.328489,0.218635,0.266375,0.1865}+G4{0.886156}" --length 1236
+
+To mimic the alignment used to produce this analysis, i.e. simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis *and* copying the same gap positions as the original alignment, you can use the following command:
+
+iqtree -s /workspace/NeuralNJ/empirical/WickD3b/7968.aln --alisim mimicked_MSA
+
+To simulate any number of alignments in either of the two commandlines above, use the --num-alignments options, for example mimic 100 alignments you would use the command line:
+
+iqtree -s /workspace/NeuralNJ/empirical/WickD3b/7968.aln --alisim mimicked_MSA --num-alignments 100
+
+For more information on using AliSim, please visit: www.iqtree.org/doc/AliSim
+
+TIME STAMP
+----------
+
+Date and time: Wed May 27 05:59:32 2026
+Total CPU time used: 3.5246 seconds (0h:0m:3s)
+Total wall-clock time used: 3.33998 seconds (0h:0m:3s)
+

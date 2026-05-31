@@ -1,0 +1,126 @@
+IQ-TREE 3.1.2 built May  7 2026
+
+Input file name: /workspace/NeuralNJ/empirical/WickD3b/5425.aln
+Type of analysis: tree reconstruction
+Random seed number: 2201
+
+REFERENCES
+----------
+
+To cite IQ-TREE 3 please use:
+
+Thomas K.F. Wong, Nhan Ly-Trong, Huaiyan Ren, Hector Banos, Andrew J. Roger,
+Edward Susko, Chris Bielow, Nicola De Maio, Nick Goldman, Matthew W. Hahn,
+Gavin Huttley, Robert Lanfear, Bui Quang Minh (2025)
+IQ-TREE 3: Phylogenomic Inference Software using Complex Evolutionary Models.
+Submitted.
+
+SEQUENCE ALIGNMENT
+------------------
+
+Input data: 10 sequences with 5994 nucleotide sites
+Number of constant sites: 2269 (= 37.8545% of all sites)
+Number of invariant (constant or ambiguous constant) sites: 2269 (= 37.8545% of all sites)
+Number of parsimony informative sites: 2277
+Number of distinct site patterns: 3279
+
+SUBSTITUTION PROCESS
+--------------------
+
+Model of substitution: GTR+F+G4
+
+Rate parameter R:
+
+  A-C: 1.6345
+  A-G: 2.4173
+  A-T: 0.9510
+  C-G: 1.4074
+  C-T: 2.8412
+  G-T: 1.0000
+
+State frequencies: (empirical counts from alignment)
+
+  pi(A) = 0.3042
+  pi(C) = 0.2088
+  pi(G) = 0.2579
+  pi(T) = 0.2291
+
+Rate matrix Q:
+
+  A   -0.9378    0.2706    0.4945    0.1728
+  C    0.3942    -1.198    0.2879    0.5162
+  G    0.5831     0.233   -0.9978    0.1817
+  T    0.2294    0.4704    0.2046   -0.9043
+
+Model of rate heterogeneity: Gamma with 4 categories
+Gamma shape alpha: 0.838
+
+ Category  Relative_rate  Proportion
+  1         0.1036         0.25
+  2         0.422          0.25
+  3         0.967          0.25
+  4         2.507          0.25
+Relative rates are computed as MEAN of the portion of the Gamma distribution falling in the category.
+
+MAXIMUM LIKELIHOOD TREE
+-----------------------
+
+Log-likelihood of the tree: -35075.9396 (s.e. 305.9628)
+Unconstrained log-likelihood (without tree): -41731.2384
+Number of free parameters (#branches + #model parameters): 26
+Akaike information criterion (AIC) score: 70203.8793
+Corrected Akaike information criterion (AICc) score: 70204.1146
+Bayesian information criterion (BIC) score: 70378.0407
+
+Total tree length (sum of branch lengths): 6.6266
+Sum of internal branch lengths: 2.3516 (35.4873% of tree length)
+
+NOTE: Tree is UNROOTED although outgroup taxon 'Amborella_trichopoda' is drawn at root
+
++----------Amborella_trichopoda
+|
+|  +--------Eschscholzia_californica
++--|
+|  |            +------------Arabidopsis_thaliana
+|  |         +--|
+|  |         |  +-----Carica_papaya
+|  |  +------|
+|  |  |      +---------Populus_trichocarpa
+|  +--|
+|     |                +--Brachypodium_distachyon
+|     +----------------|
+|                      |  +--Sorghum_bicolor
+|                      +--|
+|                         +--Zea_mays
+|
+|                          +------------------------Bazzania_trilobata
++--------------------------|
+                           +-------------------------------Leucodon_brachypus
+
+Tree in newick format:
+
+(Amborella_trichopoda:0.4209937749,(Eschscholzia_californica:0.3552663041,(((Arabidopsis_thaliana:0.5028450468,Carica_papaya:0.2459234741):0.0770768530,Populus_trichocarpa:0.3892557859):0.2774875383,(Brachypodium_distachyon:0.1017623085,(Sorghum_bicolor:0.0190874974,Zea_mays:0.0294891090):0.1273915705):0.6563292028):0.1111692781):0.0815253182,(Bazzania_trilobata:0.9644008605,Leucodon_brachypus:1.2459590668):1.0206127237);
+
+ALISIM COMMAND
+--------------
+To simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis, you can use the following command:
+
+--alisim simulated_MSA -t /workspace/IQTree_WickD3b_Results/5425.treefile -m "GTR{1.63445,2.41726,0.950973,1.40743,2.84121}+F{0.304168,0.208788,0.257948,0.229096}+G4{0.837993}" --length 5994
+
+To mimic the alignment used to produce this analysis, i.e. simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis *and* copying the same gap positions as the original alignment, you can use the following command:
+
+iqtree -s /workspace/NeuralNJ/empirical/WickD3b/5425.aln --alisim mimicked_MSA
+
+To simulate any number of alignments in either of the two commandlines above, use the --num-alignments options, for example mimic 100 alignments you would use the command line:
+
+iqtree -s /workspace/NeuralNJ/empirical/WickD3b/5425.aln --alisim mimicked_MSA --num-alignments 100
+
+For more information on using AliSim, please visit: www.iqtree.org/doc/AliSim
+
+TIME STAMP
+----------
+
+Date and time: Wed May 27 02:47:15 2026
+Total CPU time used: 5.29852 seconds (0h:0m:5s)
+Total wall-clock time used: 5.13198 seconds (0h:0m:5s)
+

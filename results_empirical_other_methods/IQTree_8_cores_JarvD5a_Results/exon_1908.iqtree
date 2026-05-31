@@ -1,0 +1,135 @@
+IQ-TREE 3.1.2 built May  7 2026
+
+Input file name: /workspace/NeuralNJ/empirical/JarvD5a/exon_1908.fasta
+Type of analysis: tree reconstruction
+Random seed number: 2201
+
+REFERENCES
+----------
+
+To cite IQ-TREE 3 please use:
+
+Thomas K.F. Wong, Nhan Ly-Trong, Huaiyan Ren, Hector Banos, Andrew J. Roger,
+Edward Susko, Chris Bielow, Nicola De Maio, Nick Goldman, Matthew W. Hahn,
+Gavin Huttley, Robert Lanfear, Bui Quang Minh (2025)
+IQ-TREE 3: Phylogenomic Inference Software using Complex Evolutionary Models.
+Submitted.
+
+SEQUENCE ALIGNMENT
+------------------
+
+Input data: 48 sequences with 352 nucleotide sites
+Number of constant sites: 349 (= 99.1477% of all sites)
+Number of invariant (constant or ambiguous constant) sites: 349 (= 99.1477% of all sites)
+Number of parsimony informative sites: 1
+Number of distinct site patterns: 22
+
+SUBSTITUTION PROCESS
+--------------------
+
+Model of substitution: GTR+F+G4
+
+Rate parameter R:
+
+  A-C: 0.0001
+  A-G: 0.0001
+  A-T: 0.0001
+  C-G: 1.5307
+  C-T: 0.0001
+  G-T: 1.0000
+
+State frequencies: (empirical counts from alignment)
+
+  pi(A) = 0.3977
+  pi(C) = 0.1783
+  pi(G) = 0.2845
+  pi(T) = 0.1395
+
+Rate matrix Q:
+
+  A  -0.0002566  7.598e-05  0.0001212  5.943e-05
+  C  0.0001695    -1.856     1.855  5.943e-05
+  G  0.0001695     1.163    -1.757    0.5943
+  T  0.0001695  7.598e-05     1.212    -1.212
+
+Model of rate heterogeneity: Gamma with 4 categories
+Gamma shape alpha: 998.4
+
+ Category  Relative_rate  Proportion
+  1         0.9601         0.25
+  2         0.9894         0.25
+  3         1.01           0.25
+  4         1.041          0.25
+Relative rates are computed as MEAN of the portion of the Gamma distribution falling in the category.
+
+MAXIMUM LIKELIHOOD TREE
+-----------------------
+
+Log-likelihood of the tree: -480.9009 (s.e. 12.5127)
+Unconstrained log-likelihood (without tree): -836.1083
+Number of free parameters (#branches + #model parameters): 32
+Akaike information criterion (AIC) score: 1025.8017
+Corrected Akaike information criterion (AICc) score: 1032.4224
+Bayesian information criterion (BIC) score: 1149.4379
+
+Total tree length (sum of branch lengths): 0.0091
+Sum of internal branch lengths: 0.0034 (37.7381% of tree length)
+
+WARNING: 9 near-zero internal branches (<0.0028) should be treated with caution
+         Such branches are denoted by '**' in the figure below
+
+NOTE: Tree is UNROOTED although outgroup taxon 'ACACH' is drawn at root
+
++**ACACH
+|
+|                                        +**ANAPL
+|                                     +**|
+|                                     |  +**CORBR
+|                                  +**|
+|                                  |  |     +**APAVI
+|                                  |  |  +**|
+|                                  |  |  |  +**MELGA
+|                                  |  +**|
+|                                  |     |  +**APTFO
+|                                  |     +**|
+|                                  |        |  +**************************CARCR
+|                                  |        +**|
+|                                  |           |  +**CATAU
+|                                  |           +**|
+|                                  |              +**************************GAVST
+|                               +**|
+|                               |  +**GEOFO
++-------------------------------|
+|                               |  +**NIPNI
+|                               +**|
+|                                  +**PHALE
+|
++**EURHE
+
+Tree in newick format:
+
+(ACACH:0.0000010000,((((ANAPL:0.0000010000,CORBR:0.0000010000):0.0000010000,((APAVI:0.0000010000,MELGA:0.0000010000):0.0000010000,(APTFO:0.0000010000,(CARCR:0.0028376887,(CATAU:0.0000010000,GAVST:0.0028387124):0.0000010000):0.0000010000):0.0000010000):0.0000010000):0.0000010000,GEOFO:0.0000010000):0.0000010000,(NIPNI:0.0000010000,PHALE:0.0000010000):0.0000010000):0.0034446709,EURHE:0.0000010000);
+
+ALISIM COMMAND
+--------------
+To simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis, you can use the following command:
+
+--alisim simulated_MSA -t /workspace/IQTree_8_cores_JarvD5a_Results/exon_1908.treefile -m "GTR{0.0001,0.0001,0.0001,1.53067,0.0001}+F{0.397748,0.178309,0.284467,0.139476}+G4{998.448}" --length 352
+
+To mimic the alignment used to produce this analysis, i.e. simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis *and* copying the same gap positions as the original alignment, you can use the following command:
+
+iqtree -s /workspace/NeuralNJ/empirical/JarvD5a/exon_1908.fasta --alisim mimicked_MSA
+
+To simulate any number of alignments in either of the two commandlines above, use the --num-alignments options, for example mimic 100 alignments you would use the command line:
+
+iqtree -s /workspace/NeuralNJ/empirical/JarvD5a/exon_1908.fasta --alisim mimicked_MSA --num-alignments 100
+
+For more information on using AliSim, please visit: www.iqtree.org/doc/AliSim
+
+TIME STAMP
+----------
+
+Date and time: Thu May 28 15:57:36 2026
+Total CPU time used: 1.55623 seconds (0h:0m:1s)
+Total wall-clock time used: 0.18801 seconds (0h:0m:0s)
+

@@ -1,0 +1,140 @@
+IQ-TREE 3.1.2 built May  7 2026
+
+Input file name: /workspace/NeuralNJ/empirical/TarvD7/ENSG00000182107.nuc.ord.aln
+Type of analysis: tree reconstruction
+Random seed number: 2201
+
+REFERENCES
+----------
+
+To cite IQ-TREE 3 please use:
+
+Thomas K.F. Wong, Nhan Ly-Trong, Huaiyan Ren, Hector Banos, Andrew J. Roger,
+Edward Susko, Chris Bielow, Nicola De Maio, Nick Goldman, Matthew W. Hahn,
+Gavin Huttley, Robert Lanfear, Bui Quang Minh (2025)
+IQ-TREE 3: Phylogenomic Inference Software using Complex Evolutionary Models.
+Submitted.
+
+SEQUENCE ALIGNMENT
+------------------
+
+Input data: 17 sequences with 1074 nucleotide sites
+Number of constant sites: 642 (= 59.7765% of all sites)
+Number of invariant (constant or ambiguous constant) sites: 642 (= 59.7765% of all sites)
+Number of parsimony informative sites: 219
+Number of distinct site patterns: 435
+
+SUBSTITUTION PROCESS
+--------------------
+
+Model of substitution: GTR+F+G4
+
+Rate parameter R:
+
+  A-C: 0.8056
+  A-G: 2.5801
+  A-T: 1.4607
+  C-G: 1.4490
+  C-T: 2.5567
+  G-T: 1.0000
+
+State frequencies: (empirical counts from alignment)
+
+  pi(A) = 0.1595
+  pi(C) = 0.3857
+  pi(G) = 0.2869
+  pi(T) = 0.1678
+
+Rate matrix Q:
+
+  A    -1.116    0.2675    0.6372    0.2111
+  C    0.1106    -0.838    0.3579    0.3694
+  G    0.3544    0.4811     -0.98    0.1445
+  T    0.2006    0.8489     0.247    -1.297
+
+Model of rate heterogeneity: Gamma with 4 categories
+Gamma shape alpha: 0.3704
+
+ Category  Relative_rate  Proportion
+  1         0.01268        0.25
+  2         0.1593         0.25
+  3         0.6971         0.25
+  4         3.131          0.25
+Relative rates are computed as MEAN of the portion of the Gamma distribution falling in the category.
+
+MAXIMUM LIKELIHOOD TREE
+-----------------------
+
+Log-likelihood of the tree: -5560.5430 (s.e. 158.5197)
+Unconstrained log-likelihood (without tree): -5279.0390
+Number of free parameters (#branches + #model parameters): 40
+Akaike information criterion (AIC) score: 11201.0860
+Corrected Akaike information criterion (AICc) score: 11204.2612
+Bayesian information criterion (BIC) score: 11400.2518
+
+Total tree length (sum of branch lengths): 1.1570
+Sum of internal branch lengths: 0.2647 (22.8793% of tree length)
+
+NOTE: Tree is UNROOTED although outgroup taxon 'P002_Opossum' is drawn at root
+
++-----------------------------P002_Opossum
+|
++---------P003_Wallaby
+|
+|                              +-----------------P004_Tenrec
+|                           +--|
+|                           |  |                 +----------P007_Armadillo
+|                           |  |              +--|
+|                           |  |              |  |  +---------------------P015_Horse
+|                           |  |              |  +--|
+|                           |  |              |     |  +---P032_Rhesus
+|                           |  |              |     +--|
+|                           |  |              |        |  +--P033_Orangutan
+|                           |  |              |        +--|
+|                           |  |              |           |  +**P035_Chimp
+|                           |  |              |           +--|
+|                           |  |              |              +--P036_Human
+|                           |  |           +--|
+|                           |  |           |  +------P013_Pig
+|                           |  |        +--|
+|                           |  |        |  +--------P012_Cow
+|                           |  |     +--|
+|                           |  |     |  +-------------P022_Squirrel
+|                           |  |  +--|
+|                           |  |  |  |           +----P025_Mouse
+|                           |  |  |  +-----------|
+|                           |  |  |              +----P026_Rat
+|                           |  +--|
+|                           |     +----------------P016_Dog
++---------------------------|
+                            |  +--------P020_Rabbit
+                            +--|
+                               +-------------------------P023_Guinea_pig
+
+Tree in newick format:
+
+(P002_Opossum:0.1352518197,P003_Wallaby:0.0464879077,((P004_Tenrec:0.0824015885,((((((P007_Armadillo:0.0537957239,(P015_Horse:0.0996800488,(P032_Rhesus:0.0203743159,(P033_Orangutan:0.0127833089,(P035_Chimp:0.0000010000,P036_Human:0.0055087808):0.0015790695):0.0118040693):0.0146667425):0.0023459362):0.0018809907,P013_Pig:0.0350603652):0.0040857039,P012_Cow:0.0410361318):0.0069283151,P022_Squirrel:0.0656867953):0.0066239174,(P025_Mouse:0.0267124621,P026_Rat:0.0264412892):0.0579659393):0.0100435654,P016_Dog:0.0767597810):0.0035698479):0.0039753826,(P020_Rabbit:0.0437990399,P023_Guinea_pig:0.1205146507):0.0093366265):0.1299100788);
+
+ALISIM COMMAND
+--------------
+To simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis, you can use the following command:
+
+--alisim simulated_MSA -t /workspace/IQTree_TarvD7_Results/ENSG00000182107.nuc.ord.treefile -m "GTR{0.805574,2.58008,1.46066,1.44899,2.55668}+F{0.159544,0.385706,0.286901,0.167849}+G4{0.370381}" --length 1074
+
+To mimic the alignment used to produce this analysis, i.e. simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis *and* copying the same gap positions as the original alignment, you can use the following command:
+
+iqtree -s /workspace/NeuralNJ/empirical/TarvD7/ENSG00000182107.nuc.ord.aln --alisim mimicked_MSA
+
+To simulate any number of alignments in either of the two commandlines above, use the --num-alignments options, for example mimic 100 alignments you would use the command line:
+
+iqtree -s /workspace/NeuralNJ/empirical/TarvD7/ENSG00000182107.nuc.ord.aln --alisim mimicked_MSA --num-alignments 100
+
+For more information on using AliSim, please visit: www.iqtree.org/doc/AliSim
+
+TIME STAMP
+----------
+
+Date and time: Tue May 26 20:58:13 2026
+Total CPU time used: 1.59207 seconds (0h:0m:1s)
+Total wall-clock time used: 1.41123 seconds (0h:0m:1s)
+
